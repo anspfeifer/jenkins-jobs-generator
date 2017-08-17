@@ -1,0 +1,46 @@
+group 'com.anselmopfeifer'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url 'http://repo.spongepowered.org/maven'
+    }
+    maven {
+        url 'http://repo.jenkins-ci.org/releases/'
+    }
+    jcenter()
+    flatDir {
+        dirs 'jars'
+    }
+}
+
+configurations {
+    testPlugins {}
+}
+
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+
+    compileOnly group: 'org.assertj', name: 'assertj-core', version: '3.4.1'
+
+    testCompile group: 'com.lesfurets', name: 'jenkins-pipeline-unit', version: '1.0'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.4.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+}
+
+defaultTasks 'test'
