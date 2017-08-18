@@ -87,6 +87,20 @@ task resolveTestPlugins(type: Copy) {
     }
 }
 
+test {
+    dependsOn tasks.resolveTestPlugins
+    inputs.files sourceSets.jobs.groovy.srcDirs
+
+    // set build directory for Jenkins test harness, JENKINS-26331
+    systemProperty 'buildDirectory', project.buildDir.absolutePath
+}
+
+task rest(dependsOn: 'classes', type: JavaExec) {
+    main = 'com.dslexample.rest.RestApiScriptRunner'
+    classpath = sourceSets.main.runtimeClasspath
+    systemProperties System.getProperties()
+}
+
 def jobs = 'com.anselmopfeifer.jobs'
 def sysProps = System.getProperties() as Map<String, ?>
 
