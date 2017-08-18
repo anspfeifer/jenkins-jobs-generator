@@ -39,7 +39,7 @@ task createProjectJobs(dependsOn: 'classes', type: JavaExec) {
 }
 
 task createServersJobs(dependsOn:'classes', type: JavaExec) {
-    main = "${jobs}.serves.servesJobs"
+    main = "${jobs}.projects.projectJobs"
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProps
 }
