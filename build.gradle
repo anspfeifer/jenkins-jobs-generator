@@ -29,10 +29,17 @@ dependencies {
     compile 'com.amazonaws:aws-java-sdk:1.11.42'
 }
 
+def jobs = 'com.anselmopfeifer.jobs'
 def sysProps = System.getProperties() as Map<String, ?>
 
-task okTest(dependsOn: 'classes', type: JavaExec) {
-    main = 'com.anselmopfeifer.jobsgenerator.test.Test'
+task creteProjectJobs(dependsOn: 'classes', type: JavaExec) {
+    main = "${jobs}.projects.projectJobs"
+    classpath = sourceSets.main.runtimeClasspath
+    systemProperties sysProps
+}
+
+task creteServersJobs(dependsOn:'classes', type: JavaExec) {
+    main = "${jobs}.serves.servesJobs"
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProps
 }
