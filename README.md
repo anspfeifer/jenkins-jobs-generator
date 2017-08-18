@@ -1,3 +1,1 @@
-# jenkins-jobs-generator
-
-
+# Jenkins Job Generator
