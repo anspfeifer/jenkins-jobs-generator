@@ -11,6 +11,14 @@ idea {
     }
 }
 
+sourceSets {
+    jobs {
+        groovy {
+            srcDirs 'src/main/groovy/jobs'
+        }
+    }
+}
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -34,6 +42,14 @@ configurations {
 
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+    compile group:'javax:javaee-api', name: 'javaee-api', version: '7.0'
+    compile group: 'org.jenkins-ci.main', name: 'jenkins-core', version: '2.46.1'
+    compile group: 'org.jenkins-ci.plugins', name: 'job-dsl-core', version: '1.61'
+//  compile group: 'org.jenkins-ci.plugins', name: 'script-security', version: '1.27@jar'
+    compile group: 'org.apache.ant', name: 'ant', version: '1.9.4'
+    compile group: 'com.github.briandilley.jsonrpc4j', name: 'jsonrpc4j', version: '1.1'
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.42'
 
     compileOnly group: 'org.assertj', name: 'assertj-core', version: '3.4.1'
 
@@ -44,3 +60,5 @@ dependencies {
 }
 
 defaultTasks 'test'
+
+def sysProps = System.getProperties() as Map<String, ?>
