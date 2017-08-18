@@ -32,13 +32,13 @@ dependencies {
 def jobs = 'com.anselmopfeifer.jobs'
 def sysProps = System.getProperties() as Map<String, ?>
 
-task creteProjectJobs(dependsOn: 'classes', type: JavaExec) {
+task createProjectJobs(dependsOn: 'classes', type: JavaExec) {
     main = "${jobs}.projects.projectJobs"
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProps
 }
 
-task creteServersJobs(dependsOn:'classes', type: JavaExec) {
+task createServersJobs(dependsOn:'classes', type: JavaExec) {
     main = "${jobs}.serves.servesJobs"
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProps
