@@ -21,12 +21,10 @@ dependencies {
         exclude module: 'groovy-all'
     }
 
-    // for the RestApiScriptRunner
     compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.2') {
         exclude(module: 'groovy')
     }
 
-    // for the RestApiScriptRunner and XmlOutputRunner
     compile('ant:ant:1.7.0')
 }
 
