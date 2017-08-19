@@ -1,4 +1,4 @@
-freeStyleJob('example') {
+freeStyleJob('gradle-project') {
     logRotator(-1, 10)
     jdk('Java 6')
     scm {
