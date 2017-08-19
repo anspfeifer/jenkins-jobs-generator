@@ -36,3 +36,7 @@ task okTest(dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProps
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
