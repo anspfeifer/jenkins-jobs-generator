@@ -25,7 +25,7 @@ echo date
     }
 
     publishers {
-        email 'anspfeifer@gmail.com'
+        // email 'anspfeifer@gmail.com'
     }
 
 }
