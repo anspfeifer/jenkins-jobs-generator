@@ -9,7 +9,7 @@ folder(basePath) {
 
 job("$basePath/seed") {
     scm {
-        github 'jbyler/job-dsl-gradle-example'
+        github 'anspfeifer/jenkins-jobs-generator'
     }
     triggers {
         scm 'H/5 * * * *'
