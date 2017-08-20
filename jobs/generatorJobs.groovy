@@ -17,6 +17,10 @@ job('generator-jobs') {
         }
     }
 
+    steps {
+        groovyCommand('generatorView.groovy')
+    }
+
     triggers {
         githubPush()
     }
