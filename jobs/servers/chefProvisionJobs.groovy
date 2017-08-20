@@ -39,6 +39,7 @@ jobFactory.freeStyleJob('chef-provision-job') {
                 #sudo chef-solo /etc/chef/node.json --legacy-mode
 
                 #sudo rm -rf /var/chef/cookbooks
+                echo "Executed Chef Provision"
                 """)
             }
         }
