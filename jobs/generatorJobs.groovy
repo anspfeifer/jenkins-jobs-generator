@@ -15,10 +15,9 @@ job('generator-jobs') {
         }
     }
 
+    s
     steps {
-        gradle{
-            tasks('generatorView')
-        }
+        triggerBuild('generator-view')
     }
 
     triggers {
