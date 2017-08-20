@@ -1,5 +1,7 @@
-job('generator-jobs') {
+import static com.anselmopfeifer.Utils.getJobDescription
 
+job('generator-jobs') {
+    description getJobDescription()
     logRotator (-1, 10)
 
     jdk ('Java 8')
@@ -16,7 +18,7 @@ job('generator-jobs') {
     }
 
     steps {
-        triggerBuild()
+        triggerBuild('generator-view')
     }
 
     triggers {
@@ -24,6 +26,6 @@ job('generator-jobs') {
     }
 
     publishers {
-        mailer 'anspfeifer@gmail.com'
+        //mailer 'anspfeifer@gmail.com'
     }
 }
