@@ -29,10 +29,7 @@ configurations {
     testPlugins {}
 }
 
-// Exclude buggy Xalan dependency this way the JRE default TransformerFactory is used
-// The xalan pulled in by htmlunit does not properly deal with spaces folder / job names
 configurations.all*.exclude group: 'xalan'
-
 dependencies {
     compile 'javax:javaee-api:7.0'
     compile 'org.jenkins-ci.main:jenkins-core:2.46.1'
@@ -70,7 +67,7 @@ task wrapper(type: Wrapper) {
 def sysProperties = System.getProperties() as Map<String, ?>
 
 task generatorViews(dependsOn: 'classes', type: JavaExec) {
-    main = 'com.anselmopfeifer.view.generatorViews'
+    main = 'com.anselmopfeifer.views.ViewsGenerator'
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProperties
 }
