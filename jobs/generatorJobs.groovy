@@ -20,7 +20,7 @@ job('generator-jobs') {
     }
 
     triggers {
-        githubPush()
+        scm('* * * * * ')
     }
 
     publishers {

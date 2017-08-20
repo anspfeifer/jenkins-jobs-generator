@@ -14,10 +14,6 @@ job('generator-view') {
         }
     }
 
-    triggers {
-        githubPush()
-    }
-
     publishers {
         //mailer 'anspfeifer@gmail.com'
     }
