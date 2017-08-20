@@ -10,7 +10,7 @@ jobFactory.freeStyleJob('chef-provision-job') {
 
     parameters{
         stringParam('VERSION',  'master', 'Version chef Release')
-        choiceParam('EXECUTE', ['no', 'yes'], "Execute chef provision")
+        booleanParam('EXECUTE', false, "Execute chef provision")
 
     }
 
