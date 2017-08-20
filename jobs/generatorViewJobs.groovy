@@ -5,7 +5,7 @@ job('generator-view') {
     jdk ('Java 8')
 
     scm {
-        cloneWorkspace('generator-data', 'Successful')
+        github('anspfeifer/jenkins-jobs-generator', 'dev')
     }
 
     steps {
