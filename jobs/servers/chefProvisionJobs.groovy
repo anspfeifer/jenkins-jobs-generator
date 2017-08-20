@@ -15,7 +15,7 @@ jobFactory.freeStyleJob('chef-provision-job') {
     steps {
         conditionalSteps {
             condition {
-                stringsMatch("${VERSION}", '', false)
+                stringsMatch("\\${VERSION}", '', false)
             }
             runner('Fail')
             steps {
