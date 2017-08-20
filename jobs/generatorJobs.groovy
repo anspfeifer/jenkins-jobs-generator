@@ -5,7 +5,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        github('anspfeifer/jenkins-jobs-generator', 'dev')
+        github 'anspfeifer/jenkins-jobs-generator'
     }
 
     steps {
