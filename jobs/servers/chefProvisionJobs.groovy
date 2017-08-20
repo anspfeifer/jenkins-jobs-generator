@@ -14,7 +14,7 @@ jobFactory.freeStyleJob('chef-provision-job') {
 
     steps {
         shell ("""
-echo ${getJobDescription()}
+echo "${getJobDescription()}"
 echo date
 """)
     }
