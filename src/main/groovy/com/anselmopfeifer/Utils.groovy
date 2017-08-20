@@ -9,6 +9,6 @@ class Utils {
     }
 
     static String getJobDescription() {
-        "Gerado por <a href='http://github.com/anspfeifer/jenkins-jobs-generator'>github.com/anspfeifer/jenkins-jobs-generator</a> em ${getGenerationDate()}"
+        "Gerado por http://github.com/anspfeifer/jenkins-jobs-generator em ${getGenerationDate()}"
     }
 }
