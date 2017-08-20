@@ -1,3 +1,4 @@
+
 class Utils {
 
     static defaultChefRevision = 'v0.477'

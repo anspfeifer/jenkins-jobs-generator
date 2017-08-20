@@ -1,3 +1,6 @@
+import static Utils.getJobDescription
+def jobDescription = getJobDescription()
+
 jobFactory.freeStyleJob('chef-provision-job') {
 
     description getJobDescription()
