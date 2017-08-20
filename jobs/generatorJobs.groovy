@@ -53,7 +53,7 @@ job('generator-view') {
     }
 
     publishers {
-        mailer 'anspfeifer@gmail.com'
+        //mailer 'anspfeifer@gmail.com'
     }
 }
 queue('generator-view')

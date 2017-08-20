@@ -46,7 +46,7 @@ jobFactory.freeStyleJob('chef-provision-job') {
     }
 
     publishers {
-        // email 'anspfeifer@gmail.com'
+        //mailer 'anspfeifer@gmail.com'
     }
 
 }
