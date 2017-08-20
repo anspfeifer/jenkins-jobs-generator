@@ -16,7 +16,7 @@ job('generator-jobs') {
     }
 
     steps {
-        triggerBuild('generator-view')
+        triggerBuild()
     }
 
     triggers {
