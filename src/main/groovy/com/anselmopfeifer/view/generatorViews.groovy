@@ -1,7 +1,6 @@
-package com.anselmopfeifer.view
-
 import hudson.model.ListView
 import jenkins.model.Jenkins
+
 import java.util.regex.Pattern
 
 def shell = new GroovyShell()
@@ -64,8 +63,7 @@ def createListView(owner, view) {
     println "create view ${listView.displayName}"
     owner.addView(listView)
 }
-
-def createNestedView(owner, view) {
+def createNestView(owner, view) {
     def nestedView = new hudson.plugins.nested_view.NestedView(view.name())
     nestedView.owner = owner
     view.children().each {
