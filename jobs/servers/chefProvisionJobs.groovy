@@ -9,20 +9,23 @@ jobFactory.freeStyleJob('chef-provision-job') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('VERSION',  null, 'Version chef Release')
+        stringParam('VERSION',  'master', 'Version chef Release')
+        choiceParam('EXECUTE', ['no', 'yes'], "Execute chef provision")
+
     }
 
     steps {
         conditionalSteps {
             condition {
-                booleanCondition('${VERSION}')
+                booleanCondition('${EXECUTE}')
             }
+
             runner('Fail')
             steps {
                 shell ("""
                 #rm -rf /tmp/cookbooks*
-                #aws s3 cp s3://devops-chef-us/cookbooks/cookbooks_${VERSION}.tar.gz cookbooks_${VERSION}.tar.gz --profile chef --region us-east-1
-                #sudo tar -xvf cookbooks_${VERSION}.tar.gz
+                #aws s3 cp s3://devops-chef-us/cookbooks/cookbooks_\${VERSION}.tar.gz cookbooks_\${VERSION}.tar.gz --profile chef --region us-east-1
+                #sudo tar -xvf cookbooks_\${VERSION}.tar.gz
                 #sudo rm -rf /var/chef/cookbooks
                 #sudo mkdir -p /var/chef && sudo mkdir -p /etc/chef/ || true
                 #sudo mv cookbooks /var/chef/cookbooks
