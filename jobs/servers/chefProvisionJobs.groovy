@@ -9,13 +9,13 @@ jobFactory.freeStyleJob('chef-provision-job') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('VERSION', '', 'Version chef Release')
+        stringParam('VERSION',  null, 'Version chef Release')
     }
 
     steps {
         conditionalSteps {
             condition {
-                stringsMatch("\\${VERSION}", '', false)
+                booleanCondition('${VERSION}')
             }
             runner('Fail')
             steps {
