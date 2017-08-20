@@ -30,7 +30,7 @@ job('generator-jobs') {
     }
 }
 
-queue('generator-data')
+queue('generator-jobs')
 
 job('generator-view') {
 
