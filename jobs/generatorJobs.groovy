@@ -17,10 +17,6 @@ job('generator-jobs') {
         }
     }
 
-    steps {
-        triggerBuild('generator-view')
-    }
-
     triggers {
         scm('* * * * * ')
     }
