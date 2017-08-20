@@ -15,7 +15,6 @@ job('generator-jobs') {
         }
     }
 
-    s
     steps {
         triggerBuild('generator-view')
     }
