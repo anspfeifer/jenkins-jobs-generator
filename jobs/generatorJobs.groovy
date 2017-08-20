@@ -1,5 +1,3 @@
-import static com.anselmopfeifer.Utils.getJobDescription
-
 job('generator-jobs') {
 
     logRotator (-1, 10)
@@ -18,7 +16,7 @@ job('generator-jobs') {
     }
 
     steps {
-        groovyCommand('generatorView.groovy')
+        groovyCommand('com.anselmopfeifer.view.generatorView.groovy')
     }
 
     triggers {

@@ -1,3 +1,5 @@
+package com.anselmopfeifer.view
+
 import hudson.model.ListView
 import jenkins.model.Jenkins
 import java.util.regex.Pattern
