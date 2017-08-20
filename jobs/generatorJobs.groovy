@@ -16,7 +16,9 @@ job('generator-jobs') {
     }
 
     steps {
-        groovyCommand('com.anselmopfeifer.view.generatorView.groovy')
+        gradle{
+            tasks('generatorView')
+        }
     }
 
     triggers {
@@ -24,6 +26,6 @@ job('generator-jobs') {
     }
 
     publishers {
-        // email 'anspfeifer@gmail.com'
+        mailer 'anspfeifer@gmail.com'
     }
 }
