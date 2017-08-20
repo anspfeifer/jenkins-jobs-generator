@@ -64,8 +64,8 @@ task wrapper(type: Wrapper) {
 
 def sysProperties = System.getProperties() as Map<String, ?>
 
-task generatorView(dependsOn: 'classes', type: JavaExec) {
-    main = 'com.anselmopfeifer.view.generatorView'
+task generatorViews(dependsOn: 'classes', type: JavaExec) {
+    main = 'com.anselmopfeifer.view.generatorViews'
     classpath = sourceSets.main.runtimeClasspath
     systemProperties sysProperties
 }
