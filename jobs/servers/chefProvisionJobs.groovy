@@ -1,8 +1,5 @@
-package servers
-
-import static Utils.getJobDescription
-
 jobFactory.freeStyleJob('chef-provision-job') {
+
     description getJobDescription()
 
     logRotator (-1, 10)

@@ -1,7 +1,4 @@
-import static Utils.getJobDescription
-
 job('generator-jobs') {
-    description getJobDescription()
 
     logRotator (-1, 10)
 
