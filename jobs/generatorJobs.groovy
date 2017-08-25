@@ -13,9 +13,10 @@ job('generator-jobs') {
     steps {
         sleep(100)
         dsl {
+            removeAction('DELETE')
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
-        }
+            }
     }
 
     triggers {
