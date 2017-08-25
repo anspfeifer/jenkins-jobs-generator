@@ -7,7 +7,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        cloneWorkspace('generate-data')
+        cloneWorkspace('generator-data')
     }
 
     steps {
