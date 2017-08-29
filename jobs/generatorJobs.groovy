@@ -7,7 +7,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        cloneWorkspace('generator-data')
+        cloneWorkspace ('generator-data', 'any')
     }
 
     steps {
@@ -17,10 +17,7 @@ job('generator-jobs') {
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
             }
-    }
-
-    triggers {
-        scm('* * * * * ')
+        remoteTrigger('generator-data')
     }
 
     publishers {
