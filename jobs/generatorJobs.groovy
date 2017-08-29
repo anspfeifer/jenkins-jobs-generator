@@ -7,7 +7,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        github ('anspfeifer/jenkins-jobs-generator', 'dev')
+        cloneWorkspace('generator-data',  'Successful')
     }
 
     steps {
@@ -16,7 +16,7 @@ job('generator-jobs') {
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
             }
-        remoteTrigger('generator-data')
+        remoteTrigger(job('generator-data'), )
     }
 
     publishers {
