@@ -2,4 +2,4 @@
 .idea/
 backup/
 build/
-gradle/
+jobs/generatorData.groovy

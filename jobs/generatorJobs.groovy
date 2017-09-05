@@ -17,9 +17,6 @@ job('generator-jobs') {
             additionalClasspath 'src/main/groovy'
             }
     }
-    trigger{
-        scm ('* * * * ')
-    }
 
     publishers {
         //mailer 'anspfeifer@gmail.com'
