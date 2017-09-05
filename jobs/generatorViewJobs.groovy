@@ -1,3 +1,5 @@
+import static com.anselmopfeifer.Utils.*
+
 job('generator-view') {
 
     logRotator (-1, 10)
@@ -5,7 +7,7 @@ job('generator-view') {
     jdk ('Java 8')
 
     scm {
-        github 'anspfeifer/jenkins-jobs-generator'
+        git("${url_repo}", "${branch}" )
     }
 
     steps {
