@@ -6,6 +6,9 @@ class Utils {
     static final branch = 'dev'
     static final defaultChefRevision = 'v0.477'
 
+    static getPasswordMysql = '123'
+    static getVersionMysql = '5.7'
+
     static getGenerationDate() {
         System.getProperty("generationDate")?:new Date()
     }
