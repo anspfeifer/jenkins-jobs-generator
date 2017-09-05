@@ -1,6 +1,6 @@
 import static com.anselmopfeifer.Utils.*
 
-jobFactory.freeStyleJob('chef-provision-job') {
+job('chef-provision-job') {
 
     description getJobDescription()
 
@@ -48,5 +48,4 @@ jobFactory.freeStyleJob('chef-provision-job') {
     publishers {
         //mailer 'anspfeifer@gmail.com'
     }
-
 }

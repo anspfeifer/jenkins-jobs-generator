@@ -16,7 +16,9 @@ job('generator-jobs') {
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
             }
-        remoteTrigger(job('generator-data'), )
+    }
+    trigger{
+        scm ('* * * * ')
     }
 
     publishers {
