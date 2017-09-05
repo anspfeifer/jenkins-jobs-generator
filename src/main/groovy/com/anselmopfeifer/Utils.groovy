@@ -1,10 +1,10 @@
 package com.anselmopfeifer
 
 class Utils {
-    static repo_name = 'anspfeifer/jenkins-jobs-generator'
-    static url_repo = "git@github.com:${repo_name}"
-    static branch = 'dev'
-    static defaultChefRevision = 'v0.477'
+    static final repo_name = 'anspfeifer/jenkins-jobs-generator'
+    static final url_repo = "git@github.com:${repo_name}"
+    static final branch = 'dev'
+    static final defaultChefRevision = 'v0.477'
 
     static getGenerationDate() {
         System.getProperty("generationDate")?:new Date()

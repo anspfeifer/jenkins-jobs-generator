@@ -9,7 +9,7 @@ job('chef-provision-job') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('VERSION',  ${defaultChefRevision}, 'Version chef Release')
+        stringParam('VERSION',  ${defaultChefRevision()}, 'Version chef Release')
         booleanParam('EXECUTE', false, "Execute chef provision")
 
     }
