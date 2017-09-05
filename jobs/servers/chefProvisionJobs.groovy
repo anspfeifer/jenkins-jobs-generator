@@ -7,6 +7,7 @@ job('chef-provision-job') {
     logRotator (-1, 10)
 
     jdk ('Java 8')
+
     def REVISION = defaultChefRevision
     parameters{
         stringParam('VERSION',  ${REVISION}, 'Version chef Release')
