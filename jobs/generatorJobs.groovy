@@ -7,7 +7,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        git("${url_repo}", "${branch}" )
+        github("${repo_name}", "${branch}" )
     }
 
     steps {
