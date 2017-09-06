@@ -11,7 +11,6 @@ job('generator-jobs') {
     }
 
     steps {
-        sleep(100)
         dsl {
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
