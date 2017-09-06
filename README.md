@@ -13,3 +13,6 @@
     │   └── test
     │       └── groovy          # specs
     └── build.gradle            # build file
+
+## plugins:
+- build-flow-plugin
