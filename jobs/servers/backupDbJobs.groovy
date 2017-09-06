@@ -17,8 +17,6 @@ job('backup-db') {
         shell ("""
 echo "Executed Chef Provision"
                 """)
-            }
-        }
     }
 
     publishers {
