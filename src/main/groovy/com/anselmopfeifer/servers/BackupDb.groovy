@@ -2,27 +2,16 @@ package com.anselmopfeifer.servers
 
 import com.anselmopfeifer.Utils
 
-class BackupDb {
-    static util = new Utils()
+static final String backupMysql() {
+    def util = new Utils()
+    def user = '--user=root'
+    def host = '--host=127.0.0.1'
 
-    static String getTypeDatabase(type) {
-        if (type == 'mysql') {
-            return 'mysql'
-        } else if (type == 'postgres') {
-            return 'postgres'
-        } else if (type == 'mongo') {
-            return 'mongo'
-        }
+    if (util.getVersionMysql != '5.7') {
+        user = '--user root'
     }
 
-    static String backupMysql() {
-        
-        def user = '-u root'
+    def dump = "mysqldump ${host} -${user} --password=${util.getPasswordMysql} > dump-${util.date}.sql"
 
-        if (util.getVersionMysql == '5.5') {
-            user = '-uroot'
-        }
-
-        def dump = "mysql ${user} -p${util.getPasswordMysql} --host"
-    }
+    return dump
 }

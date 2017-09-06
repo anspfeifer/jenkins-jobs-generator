@@ -11,8 +11,7 @@ job('chef-provision-job') {
     def REVISION = defaultChefRevision
     parameters{
         stringParam('VERSION', "${REVISION}", 'Version chef Release')
-        booleanParam('EXECUTE', false, "Execute chef provision")
-
+        booleanParam('EXECUTE', false, 'Execute chef provision')
     }
 
     steps {

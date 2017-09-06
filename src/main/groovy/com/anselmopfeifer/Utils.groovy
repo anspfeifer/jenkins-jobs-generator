@@ -8,6 +8,8 @@ class Utils {
 
     static getPasswordMysql = '123'
     static getVersionMysql = '5.7'
+    
+    static date = System.getProperty("generationDate")?:new Date().format('yyyy-mm-dd-hh-mm')
 
     static getGenerationDate() {
         System.getProperty("generationDate")?:new Date()
@@ -16,4 +18,5 @@ class Utils {
     static String getJobDescription() {
         "Gerado por http://github.com/${repo_name} em ${getGenerationDate()}"
     }
+
 }
