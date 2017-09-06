@@ -1,4 +1,5 @@
 import static com.anselmopfeifer.Utils.*
+import static com.anselmopfeifer.servers.backupDb.backupMysql
 
 job('backup-db') {
 
@@ -8,6 +9,7 @@ job('backup-db') {
 
     jdk ('Java 8')
 
+    def command =
     parameters{
         stringParam('NAME', '', 'Version chef Release')
         booleanParam('EXECUTE', true, 'Execute chef provision')
@@ -15,7 +17,7 @@ job('backup-db') {
 
     steps {
         shell ("""
-echo "Executed Chef Provision"
+        ${backupMysql()}
                 """)
     }
 
