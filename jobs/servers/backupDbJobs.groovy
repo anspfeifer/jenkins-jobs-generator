@@ -15,15 +15,14 @@ job('backup-db') {
         stringParam('HOST', 'localhost', 'Host Mysql Server')
         stringParam('PASSWORD', '', 'Password em base64')
     }
-def database = ${DATABASE_NAME}
+
     steps {
-        if (database) {
+        if ('\${DATABASE_NAME}') {
             shell("""
 ${backupMysql(database, '\${HOST}', '\${USER}', '\${PASSWORD}')}
 """)
         }
     }
-
 
     publishers {
         //mailer 'anspfeifer@gmail.com'
