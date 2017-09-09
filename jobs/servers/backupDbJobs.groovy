@@ -19,7 +19,7 @@ job('backup-db') {
     steps {
         if ('\${DATABASE_NAME}') {
             shell("""
-${backupMysql(database, '\${HOST}', '\${USER}', '\${PASSWORD}')}
+${backupMysql('\${DATABASE_NAME}', '\${HOST}', '\${USER}', '\${PASSWORD}')}
 """)
         }
     }
