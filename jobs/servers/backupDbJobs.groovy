@@ -24,6 +24,7 @@ echo \${USER}
 echo \${PASSWORD}
 ${backupMysql('\${DATABASE_NAME}', '\${HOST}', '\${USER}', '\${PASSWORD}')}
 """)
+
     }
 
     publishers {
