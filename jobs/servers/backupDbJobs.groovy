@@ -10,7 +10,9 @@ job('backup-db') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('NAME', '', 'Version chef Release')
+        stringParam('DATABASE_NAME', '', 'Name the Data Base')
+        stringParam('USER', '', 'User Name to Access in Data Base')
+        booleanParam('PASSWORD', true, 'Execute chef provision')
         booleanParam('EXECUTE', true, 'Execute chef provision')
     }
 
