@@ -4,14 +4,13 @@ import com.anselmopfeifer.Utils
 
 static final String backupMysql(database_name, host, user, password) {
     def util = new Utils()
-    user = '--user=root'
-    host = '--host=127.0.0.1'
+    user = "--user=${user}"
 
     if (util.getVersionMysql != '5.7') {
-        user = '--user root'
+        user = "--user ${user}"
     }
 
-    def dump = "mysqldump ${host} -${user} --password=${password} ${database_name} > ${database_name}-${util.date}.sql"
+    def dump = "mysqldump --host=${host} ${user} --password=${password} ${database_name} > ${database_name}-${util.date}.sql"
 
     return dump
 }
