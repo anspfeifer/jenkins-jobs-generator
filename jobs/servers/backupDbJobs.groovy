@@ -10,22 +10,20 @@ job('backup-db') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('DATABASE_NAME', null, 'Name the Data Base')
+        stringParam('DATABASE_NAME', '', 'Name the Data Base')
         stringParam('USER', null, 'User Name to Access in Data Base')
         stringParam('HOST', null, 'Host Mysql Server')
         stringParam('PASSWORD', null, 'Password em base64')
     }
 
     steps {
-        if ('\${DATABASE_NAME}') {
-            shell("""
+        shell("""
 echo \${DATABASE_NAME}
 echo \${HOST}
 echo \${USER}
 echo \${PASSWORD}
 ${backupMysql('\${DATABASE_NAME}', '\${HOST}', '\${USER}', '\${PASSWORD}')}
 """)
-        }
     }
 
     publishers {
