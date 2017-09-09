@@ -10,17 +10,20 @@ job('backup-db') {
     jdk ('Java 8')
 
     parameters{
-        stringParam('DATABASE_NAME', '', 'Name the Data Base')
+        stringParam('DATABASE_NAME', null, 'Name the Data Base')
         stringParam('USER', '', 'User Name to Access in Data Base')
-        booleanParam('PASSWORD', true, 'Execute chef provision')
-        booleanParam('EXECUTE', true, 'Execute chef provision')
+        stringParam('HOST', 'localhost', 'Host Mysql Server')
+        stringParam('PASSWORD', '', 'Password em base64')
+    }
+def database = ${DATABASE_NAME}
+    steps {
+        if (database) {
+            shell("""
+${backupMysql(database, '\${HOST}', '\${USER}', '\${PASSWORD}')}
+""")
+        }
     }
 
-    steps {
-        shell ("""
-${backupMysql()}
-                """)
-    }
 
     publishers {
         //mailer 'anspfeifer@gmail.com'

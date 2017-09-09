@@ -2,16 +2,16 @@ package com.anselmopfeifer.servers
 
 import com.anselmopfeifer.Utils
 
-static final String backupMysql() {
+static final String backupMysql(database_name, host, user, password) {
     def util = new Utils()
-    def user = '--user=root'
-    def host = '--host=127.0.0.1'
+    user = '--user=root'
+    host = '--host=127.0.0.1'
 
     if (util.getVersionMysql != '5.7') {
         user = '--user root'
     }
 
-    def dump = "mysqldump ${host} -${user} --password=${util.getPasswordMysql} > dump-${util.date}.sql"
+    def dump = "mysqldump ${host} -${user} --password=${password} ${database_name}> ${database_name}-${util.date}.sql"
 
     return dump
 }
