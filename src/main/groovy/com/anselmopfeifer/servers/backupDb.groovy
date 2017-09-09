@@ -11,7 +11,7 @@ static final String backupMysql(database_name, host, user, password) {
         user = '--user root'
     }
 
-    def dump = "mysqldump ${host} -${user} --password=${password} ${database_name}> ${database_name}-${util.date}.sql"
+    def dump = "mysqldump ${host} -${user} --password=${password} ${database_name} > ${database_name}-${util.date}.sql"
 
     return dump
 }
