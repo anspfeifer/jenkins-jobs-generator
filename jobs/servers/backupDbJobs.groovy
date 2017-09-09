@@ -11,9 +11,9 @@ job('backup-db') {
 
     parameters{
         stringParam('DATABASE_NAME', null, 'Name the Data Base')
-        stringParam('USER', 'root', 'User Name to Access in Data Base')
-        stringParam('HOST', 'localhost', 'Host Mysql Server')
-        stringParam('PASSWORD', '', 'Password em base64')
+        stringParam('USER', null, 'User Name to Access in Data Base')
+        stringParam('HOST', null, 'Host Mysql Server')
+        stringParam('PASSWORD', null, 'Password em base64')
     }
 
     steps {
