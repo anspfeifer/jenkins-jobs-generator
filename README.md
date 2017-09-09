@@ -15,4 +15,11 @@
     └── build.gradle            # build file
 
 ## plugins:
-- build-flow-plugin
+```
+build-flow-plugin
+job-dsl
+simple-build-for-pipeline
+github
+github-pullrequest
+
+github-oauth
