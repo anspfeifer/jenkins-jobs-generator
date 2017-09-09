@@ -18,10 +18,6 @@ job('backup-db') {
 
     steps {
         shell("""
-echo \${DATABASE_NAME}
-echo \${HOST}
-echo \${USER}
-echo \${PASSWORD}
 ${backupMysql('\${DATABASE_NAME}', '\${HOST}', '\${USER}', '\${PASSWORD}')}
 """)
 
