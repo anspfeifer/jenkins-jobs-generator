@@ -16,5 +16,11 @@ if (filePath) {
     request.setCannedAcl(CannedAccessControlList.PublicRead)
 }
 
-client.putObject(request)
-println("Copy to ${file} to ${bucket}/${expandedObjectKey}")
+
+static final copySingleFileToS3(bucketNameAndPath, file) {
+
+}
+
+static final copyMultiplesFilesToS3(bucketNameAndPath, path) {
+
+}
