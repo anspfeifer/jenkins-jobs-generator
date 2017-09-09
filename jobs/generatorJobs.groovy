@@ -17,6 +17,10 @@ job('generator-jobs') {
             }
     }
 
+    triggers {
+        scm('* * * * * ')
+    }
+
     publishers {
         //mailer 'anspfeifer@gmail.com'
     }
