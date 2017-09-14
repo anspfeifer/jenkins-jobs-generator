@@ -1,4 +1,4 @@
-import static com.anselmopfeifer.Utils.*
+import static com.anselmopfeifer.utils.Configuration.*
 
 job('chef-provision-job') {
 

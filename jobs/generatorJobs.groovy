@@ -1,4 +1,5 @@
-import static com.anselmopfeifer.Utils.getJobDescription
+import static com.anselmopfeifer.utils.Configuration.getEnvs
+import static com.anselmopfeifer.utils.Configuration.getJobDescription
 
 job('generator-jobs') {
     description getJobDescription()
@@ -7,7 +8,7 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        cloneWorkspace('generator-data',  'Successful')
+        github("${getEnvs().REPO}", '')
     }
 
     steps {
