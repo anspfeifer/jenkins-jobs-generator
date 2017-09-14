@@ -8,10 +8,10 @@ job('chef-provision-job') {
 
     jdk ('Java 8')
 
+    def REVISION = defaultChefRevision
     parameters{
-        stringParam('VERSION',  'master', 'Version chef Release')
-        booleanParam('EXECUTE', false, "Execute chef provision")
-
+        stringParam('VERSION', "${REVISION}", 'Version chef Release')
+        booleanParam('EXECUTE', false, 'Execute chef provision')
     }
 
     steps {

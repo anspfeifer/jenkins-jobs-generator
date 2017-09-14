@@ -1,5 +1,8 @@
+
 import static com.anselmopfeifer.utils.Configuration.getEnvs
 import static com.anselmopfeifer.utils.Configuration.getJobDescription
+
+import static com.anselmopfeifer.Utils.*
 
 job('generator-jobs') {
     description getJobDescription()
@@ -8,15 +11,18 @@ job('generator-jobs') {
     jdk ('Java 8')
 
     scm {
-        github("${getEnvs().REPO}", '')
+        github("${repo_name}", "${branch}" )
     }
 
     steps {
-        sleep(100)
         dsl {
             external 'jobs/**/*Jobs.groovy'
             additionalClasspath 'src/main/groovy'
             }
+    }
+
+    triggers {
+        scm('* * * * * ')
     }
 
     publishers {

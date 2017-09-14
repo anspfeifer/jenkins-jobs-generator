@@ -14,5 +14,14 @@
     │       └── groovy          # specs
     └── build.gradle            # build file
 
-## List plugins
-- conditional-buildstep
+## plugins:
+```
+conditional-buildstep
+build-flow-plugin
+job-dsl
+simple-build-for-pipeline
+github
+github-pullrequest
+permissive-script-security // configureSecurity/ Enable script security for Job DSL scripts (OFF)
+build-flow-plugin
+github-oauth
