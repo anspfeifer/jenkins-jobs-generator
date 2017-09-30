@@ -1,7 +1,4 @@
 
-import static com.anselmopfeifer.utils.Configuration.getEnvs
-import static com.anselmopfeifer.utils.Configuration.getJobDescription
-
 import static com.anselmopfeifer.Utils.*
 
 job('generator-jobs') {
