@@ -8,8 +8,7 @@ class Configuration {
 
 
     static List<Environments> getEnvs() {
-        System.setProperty('repo', getEnvs().REPO_NAME)
-        System.setProperty('branch', getEnvs().BRANCH)
+
     }
 
     static String getJobDescription() {
