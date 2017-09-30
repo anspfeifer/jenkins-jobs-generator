@@ -15,12 +15,14 @@
     └── build.gradle            # build file
 
 ## plugins:
+
 ```
-build-flow-plugin
 job-dsl
+permissive-script-security // configureSecurity/ Enable script security for Job DSL scripts (OFF)
+
+build-flow-plugin
+
 simple-build-for-pipeline
 github
 github-pullrequest
-permissive-script-security // configureSecurity/ Enable script security for Job DSL scripts (OFF)
 build-flow-plugin
-github-oauth
