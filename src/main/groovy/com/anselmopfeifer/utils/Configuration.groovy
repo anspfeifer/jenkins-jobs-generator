@@ -11,7 +11,7 @@ class Configuration {
     }
 
     static String getJobDescription() {
-        "Gerado por http://${REPO_NAME} em ${getGenerationDate()}"
+        "Gerado por http://${REPO_NAME}, branch: ${BRANCH} em ${getGenerationDate()}"
     }
 
 }
