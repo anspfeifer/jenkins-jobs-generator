@@ -1,4 +1,3 @@
-
 import static com.anselmopfeifer.utils.Configuration.*
 
 job('generator-jobs') {
