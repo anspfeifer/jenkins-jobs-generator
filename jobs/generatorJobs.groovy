@@ -1,5 +1,5 @@
 
-import static com.anselmopfeifer.Utils.*
+import static com.anselmopfeifer.utils.Configuration.*
 
 job('generator-jobs') {
     description getJobDescription()
