@@ -1,5 +1,5 @@
-import static com.anselmopfeifer.Utils.*
-import static com.anselmopfeifer.servers.backupDb.backupMysql
+import static com.anselmopfeifer.utils.Configuration.*
+import static com.anselmopfeifer.servers.backupDb.*
 
 job('backup-db') {
 
