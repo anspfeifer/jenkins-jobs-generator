@@ -1,13 +1,13 @@
-import static com.anselmopfeifer.Utils.*
+import static com.anselmopfeifer.utils.Configuration.*
 
 job('generator-view') {
-
+    description getJobDescription()
     logRotator (-1, 10)
 
     jdk ('Java 8')
 
     scm {
-        github("${repo_name}", "${branch}" )
+        github("${REPO_NAME}", "${BRANCH}" )
     }
 
     steps {
