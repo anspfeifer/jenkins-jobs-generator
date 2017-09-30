@@ -6,9 +6,10 @@ class Configuration {
         System.getProperty("generationDate")?:new Date()
     }
 
-    static List<Environments> getEnvs(){
-        System.getenv(getEnvs().BRANCH)
-        System.getenv(getEnvs().REPO_NAME)
+
+    static List<Environments> getEnvs() {
+        System.setProperty('repo', getEnvs().REPO_NAME)
+        System.setProperty('branch', getEnvs().BRANCH)
     }
 
     static String getJobDescription() {
