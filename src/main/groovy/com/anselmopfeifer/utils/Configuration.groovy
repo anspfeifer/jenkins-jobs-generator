@@ -2,21 +2,16 @@ package com.anselmopfeifer.utils
 
 class Configuration {
 
+    static String REPO_NAME = 'anspfeifer/jenkins-jobs-generator'
+    static String BRANCH = 'dev'
+    static String CHEF_VERSION = 'v0.0.1'
+
     static getGenerationDate() {
         System.getProperty("generationDate")?:new Date()
     }
 
-
-    static List<Environments> setEnvs() {
-        def env = System.getenv()
-        env.put(repo: setEnvs().REPO_NAME)
-        env.put(repo: setEnvs().BRANCH)
-        env.put(chef_version: setEnvs().CHEF_VERSION)
-        env
-    }
-
     static String getJobDescription() {
-        "Gerado por http://${setEnvs().REPO_NAME} em ${getGenerationDate()}"
+        "Gerado por http://${REPO_NAME} em ${getGenerationDate()}"
     }
 
 }
