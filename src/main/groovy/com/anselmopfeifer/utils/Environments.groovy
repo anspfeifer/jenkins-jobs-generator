@@ -2,9 +2,12 @@ package com.anselmopfeifer.utils
 
 class Environments {
 
-    static final String REPO_NAME = 'anspfeifer/jenkins-jobs-generator'
-    static final String BRANCH = 'dev'
-    static final String defaultChefRevision = 'v0.0.1'
+    static String REPO_NAME = 'anspfeifer/jenkins-jobs-generator'
+    static String BRANCH = 'dev'
+    static String CHEF_VERSION = 'v0.0.1'
+
+
+
 
 }
 

@@ -7,12 +7,16 @@ class Configuration {
     }
 
 
-    static List<Environments> getEnvs() {
-
+    static List<Environments> setEnvs() {
+        def env = System.getenv()
+        env.put(repo: setEnvs().REPO_NAME)
+        env.put(repo: setEnvs().BRANCH)
+        env.put(chef_version: setEnvs().CHEF_VERSION)
+        env
     }
 
     static String getJobDescription() {
-        "Gerado por http://${getEnvs().REPO_NAME} em ${getGenerationDate()}"
+        "Gerado por http://${setEnvs().REPO_NAME} em ${getGenerationDate()}"
     }
 
 }
