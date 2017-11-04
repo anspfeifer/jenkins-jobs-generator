@@ -6,8 +6,9 @@ class Configuration {
     static String BRANCH = 'dev'
     static String CHEF_VERSION = 'v0.477'
 
-    static getPasswordMysql = '123'
-    static getVersionMysql = '5.7'
+    static String bucketName = 'devops-backup-us'
+    static String getPasswordMysql = '123'
+    static String getVersionMysql = '5.7'
     static date = System.getProperty("generationDate")?:new Date().format('yyyy-mm-dd-hh-mm')
 
 
